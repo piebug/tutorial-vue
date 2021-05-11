@@ -2,7 +2,7 @@
   <div id="app" class="small-container">
     <h1>Employees</h1>
 
-    <employee-form />
+    <employee-form @add:employee="addEmployee" />
     <employee-table :employees="employees" />
     <!-- same thing as: -->
     <!-- <employee-table v-bind:employees="employees" /> -->
@@ -38,6 +38,14 @@
             email: 'dinesh@piedpiper.com',
           },
         ]
+      }
+    },
+    methods: {
+      addEmployee(employee) {
+        const newID = this.employees.length + 1;
+        const newEmployee = {...employee, newID};
+
+        this.employees = [...this.employees, newEmployee];
       }
     }
   }

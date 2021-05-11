@@ -22,7 +22,7 @@
     name: 'employee-table',
     props: {
       employees: Array,
-    },
+    }
   }
 </script>
 
