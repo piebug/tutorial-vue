@@ -12,8 +12,8 @@
 </template>
 
 <script>
-  import EmployeeTable from '@/components/EmployeeTable.vue'
-  import EmployeeForm from '@/components/EmployeeForm.vue'
+  import EmployeeTable from './components/EmployeeTable.vue'
+  import EmployeeForm from './components/EmployeeForm.vue'
 
   export default {
     name: 'app',
@@ -49,7 +49,7 @@
           const data = await response.json();
           this.employees = [...this.employees, data];
         } catch (error) {
-          console.error();
+          console.error(error);
         }
       },
       async editEmployee(id, updatedEmployee) {
@@ -62,7 +62,7 @@
           const data = await response.json();
           this.employees = this.employees.map(employee => (employee.id === id ? data : employee));
         } catch (error) {
-          console.error();
+          console.error(error);
         }
       },
       async deleteEmployee(id) {
@@ -72,7 +72,7 @@
           });
           this.employees = this.employees.filter(employee => employee.id !== id);
         } catch (error) {
-          console.error();
+          console.error(error);
         }
       }
     }
