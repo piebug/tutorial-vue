@@ -22,3 +22,8 @@ yarn lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+## Notes
+* `v-bind:employees` = `:employees`
+* `v-on:add` = `@add`
+* slots (`v-slot`/`x` directive) are confusing
