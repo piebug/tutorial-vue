@@ -9,13 +9,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2  # $GITHUB_WORKSPACE
+      - uses: actions/setup-node@v1
+        with: 
+          node-version: 12.x  # vite/vue requires node >= 12
       - uses: borales/actions-yarn@v2.0.0
         with:
-          node-version: 10.16.x 
           cmd: install  # installs dependencies
       - uses: borales/actions-yarn@v2.0.0
         with:
-          node-version: 10.16.x 
           cmd: dev  # builds the app
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@4.1.0
