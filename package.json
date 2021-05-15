@@ -7,6 +7,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "build-deploy": "vite build --base=/tutorial-vue/",
     "serve": "vite preview"
   },
   "dependencies": {
