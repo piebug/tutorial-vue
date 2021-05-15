@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "Vue JS tutorial project",
   "repository": "https://github.com/pies-n-loaf/tutorial-vue.git",
+  "license": "MIT",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
