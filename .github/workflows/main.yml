@@ -11,9 +11,11 @@ jobs:
       - uses: actions/checkout@v2  # $GITHUB_WORKSPACE
       - uses: borales/actions-yarn@v2.0.0
         with:
+          node-version: 10.16.x 
           cmd: install  # installs dependencies
       - uses: borales/actions-yarn@v2.0.0
         with:
+          node-version: 10.16.x 
           cmd: dev  # builds the app
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@4.1.0
