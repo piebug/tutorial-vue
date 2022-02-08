@@ -91,7 +91,7 @@
   }
 
   thead {
-    @apply bg-sky-100;
+    @apply bg-sky-100 border-t border-sky-200;
   }
 
   tbody > tr {

@@ -1,16 +1,14 @@
 <template>
-  <div id="employees">
-    <div class="small-container">
-      <h1>Employees</h1>
+  <main id="employees">
+    <h1>Employees</h1>
 
-      <employee-form @add:employee="addEmployee" />
-      <employee-table 
-        :employees="employees" 
-        @edit:employee="editEmployee"
-        @delete:employee="deleteEmployee" 
-      />
-    </div>
-  </div>
+    <employee-form @add:employee="addEmployee" />
+    <employee-table 
+      :employees="employees" 
+      @edit:employee="editEmployee"
+      @delete:employee="deleteEmployee" 
+    />
+  </main>
 </template>
 
 <script>
@@ -81,19 +79,16 @@
   }
 </script>
 
-<style>
-  body {
-    margin: 0;
-    padding: 0;
-    background-color: #ffffff !important;
+<style scoped>
+  main {
+    @apply container mx-auto mt-8;
   }
 
-  button {
-    background: #009435;
-    border: 1px solid #009435;
+  main > * {
+    @apply mb-8;
   }
 
-  .small-container {
-    max-width: 680px;
+  h1 {
+    @apply text-5xl font-bold;
   }
 </style>
