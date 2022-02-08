@@ -1,14 +1,16 @@
 <template>
-  <main id="employees">
-    <h1>Employees</h1>
+  <div id="employees">
+    <main>
+      <h1>Employees</h1>
 
-    <employee-form @add:employee="addEmployee" />
-    <employee-table 
-      :employees="employees" 
-      @edit:employee="editEmployee"
-      @delete:employee="deleteEmployee" 
-    />
-  </main>
+      <employee-form @add:employee="addEmployee" />
+      <employee-table 
+        :employees="employees" 
+        @edit:employee="editEmployee"
+        @delete:employee="deleteEmployee" 
+      />
+    </main>
+  </div>
 </template>
 
 <script>
@@ -80,8 +82,12 @@
 </script>
 
 <style scoped>
+  #employees {
+    @apply m-0 p-0 h-screen bg-stone-50;
+  }
+
   main {
-    @apply container mx-auto mt-8 px-4 lg:w-1/3 font-serif;
+    @apply container mx-auto pt-8 px-4 lg:w-1/3 font-serif;
   }
 
   main > * {

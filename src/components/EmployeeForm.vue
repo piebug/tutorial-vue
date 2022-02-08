@@ -98,7 +98,7 @@
   input[type="text"],
   input[type="email"] {
     @apply mt-0 block w-full px-0.5 border-0 border-b-2 border-stone-200 
-      focus:ring-0 focus:border-stone-400;
+      focus:ring-0 focus:border-stone-400 focus:bg-stone-50;
   }
 
   button {
