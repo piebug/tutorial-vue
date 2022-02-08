@@ -88,7 +88,7 @@
 
 <style scoped>
   form {
-    @apply grid grid-cols-1 gap-6;
+    @apply grid grid-cols-1 gap-4;
   }
 
   label > span {
@@ -97,14 +97,14 @@
 
   input[type="text"],
   input[type="email"] {
-    @apply mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-200 
-      focus:ring-0 focus:border-sky-500;
+    @apply mt-0 block w-full px-0.5 border-0 border-b-2 border-stone-200 
+      focus:ring-0 focus:border-stone-400;
   }
 
   button {
-    @apply rounded py-2 border-2 border-sky-500 font-bold text-sky-500
-      hover:bg-sky-500 hover:text-white
-      focus:bg-sky-400 focus:text-white;
+    @apply py-2 border-2 border-stone-400 font-bold
+      focus:bg-stone-400 focus:border-stone-400 focus:text-white
+      hover:bg-stone-500 hover:border-stone-500 hover:text-white;
   }
 
   input.has-error {
@@ -116,7 +116,7 @@
   }
 
   .error-message {
-    @apply text-rose-500 border-l-rose-300;
+    @apply text-rose-600 border-l-rose-300;
   }
 
   .success-message {

@@ -81,7 +81,7 @@
 
 <style scoped>
   main {
-    @apply container mx-auto mt-8;
+    @apply container mx-auto mt-8 px-4 lg:w-1/3 font-serif;
   }
 
   main > * {

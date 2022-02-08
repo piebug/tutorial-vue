@@ -87,20 +87,21 @@
   }
 
   tr {
-    @apply border-b border-b-sky-200;
+    @apply border-b border-b-stone-500;
   }
 
   thead {
-    @apply bg-sky-100 border-t border-sky-200;
+    @apply border-t-2 border-b-2 border-stone-400;
   }
 
   tbody > tr {
-    @apply hover:bg-slate-100;
+    @apply hover:bg-white;
   }
 
   button {
-    @apply rounded p-1 ml-1 text-sm text-sky-500 font-semibold border-sky-500
-      hover:bg-sky-500 hover:text-white;
+    @apply px-1 ml-1 text-sm text-stone-500 font-semibold border-b border-stone-500
+      hover:bg-stone-500 hover:text-white 
+      focus:bg-stone-400 focus:border-stone-400 focus:text-white;
   }
 
   button:first-child {
