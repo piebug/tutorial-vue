@@ -4,13 +4,13 @@
       v-if="employees.length < 1" 
       class="empty-table"
     >
-      No employees
+      No employees.
     </p>
     <table v-else>
       <thead>
         <tr>
-          <th>Employee name</th>
-          <th>Employee email</th>
+          <th>Name</th>
+          <th>Email</th>
           <th>Actions</th>
         </tr>
       </thead>
@@ -77,10 +77,33 @@
 </script>
 
 <style scoped>
-  button {
-    margin-left: .5rem;
+  table {
+    @apply text-left mx-auto w-full;
   }
+
+  th,
+  td {
+    @apply p-2 w-2/5;
+  }
+
+  tr {
+    @apply border-b border-b-sky-200;
+  }
+
+  thead {
+    @apply bg-sky-100;
+  }
+
+  tbody > tr {
+    @apply hover:bg-slate-100;
+  }
+
+  button {
+    @apply rounded p-1 ml-1 text-sm text-sky-500 font-semibold border-sky-500
+      hover:bg-sky-500 hover:text-white;
+  }
+
   button:first-child {
-    margin-left: 0;
+    @apply ml-0;
   }
 </style>
