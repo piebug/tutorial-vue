@@ -44,7 +44,7 @@
         </tr>
       </tbody>
     </table>
-  </div>
+  </section>
 </template>
 
 <script>
