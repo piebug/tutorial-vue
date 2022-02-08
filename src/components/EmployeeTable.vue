@@ -1,5 +1,5 @@
 <template>
-  <div id="employee-table">
+  <section id="employee-table">
     <p 
       v-if="employees.length < 1" 
       class="empty-table"
