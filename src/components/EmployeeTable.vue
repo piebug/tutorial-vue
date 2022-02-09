@@ -26,7 +26,7 @@
             {{ employee.name }}
           </td>
           <td v-if="editing === employee.id">
-            <input type="text" v-model="employee.email" />
+            <input type="email" v-model="employee.email" />
           </td>
           <td v-else>
             {{ employee.email }}
@@ -106,5 +106,10 @@
 
   button:first-child {
     @apply ml-0;
+  }
+
+  input[type="text"],
+  input[type="email"] {
+    @apply border border-stone-200 focus:ring-0 focus:border-stone-400 focus:bg-stone-50;
   }
 </style>
