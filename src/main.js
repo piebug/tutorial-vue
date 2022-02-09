@@ -1,9 +1,12 @@
 import { createApp } from 'vue'
 import { createRouter, createWebHashHistory } from 'vue-router'
+
 import Employees from './pages/Employees.vue'
+import Home from './pages/Home.vue'
 import App from './App.vue'
 
 const routes = [
+  { path: '/', component: Home },
   { path: '/employees', component: Employees },
 ]
 
