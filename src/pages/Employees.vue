@@ -34,11 +34,11 @@
     methods: {
       async getEmployees() {
         try {
-          const response = await fetch('https://jsonplaceholder.typicode.com/users');
-          const data = await response.json();
-          this.employees = data;
+          const response = await fetch('https://jsonplaceholder.typicode.com/users')
+          const data = await response.json()
+          this.employees = data
         } catch (error) {
-          console.error(error);
+          console.error(error)
         }
       },
       async addEmployee(employee) {
@@ -47,11 +47,11 @@
             method: 'POST',
             body: JSON.stringify(employee),
             headers: { 'Content-type': 'application/json; charset=UTF-8' },
-          });
-          const data = await response.json();
-          this.employees = [...this.employees, data];
+          })
+          const data = await response.json()
+          this.employees = [...this.employees, data]
         } catch (error) {
-          console.error(error);
+          console.error(error)
         }
       },
       async editEmployee(id, updatedEmployee) {
@@ -60,41 +60,41 @@
             method: 'PUT',
             body: JSON.stringify(updatedEmployee),
             headers: { 'Content-type': 'application/json; charset=UTF-8' },
-          });
-          const data = await response.json();
-          this.employees = this.employees.map(employee => (employee.id === id ? data : employee));
+          })
+          const data = await response.json()
+          this.employees = this.employees.map(employee => (employee.id === id ? data : employee))
         } catch (error) {
-          console.error(error);
+          console.error(error)
         }
       },
       async deleteEmployee(id) {
         try {
           await fetch(`https://jsonplaceholder.typicode.com/users/${id}`, {
             method: "DELETE"
-          });
-          this.employees = this.employees.filter(employee => employee.id !== id);
+          })
+          this.employees = this.employees.filter(employee => employee.id !== id)
         } catch (error) {
-          console.error(error);
+          console.error(error)
         }
       }
     }
   }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
   #employees {
     @apply m-0 p-0 h-screen bg-stone-50;
-  }
 
-  main {
-    @apply container mx-auto pt-8 px-4 lg:w-1/3 font-serif;
-  }
+    main {
+      @apply container mx-auto pt-8 px-4 lg:w-1/3 font-serif;
 
-  main > * {
-    @apply mb-8;
-  }
+      & > * {
+        @apply mb-8;
+      }
+    }
 
-  h1 {
-    @apply text-5xl font-bold;
+    h1 {
+      @apply text-5xl font-bold;
+    }
   }
 </style>
