@@ -33,7 +33,7 @@
           </td>
           <td v-if="editing === employee.id">
             <button @click="editEmployee(employee)">Save</button>
-            <button class="muted-button" @click="cancelEdit(employee)">Cancel</button>
+            <button @click="cancelEdit(employee)">Cancel</button>
           </td>
           <td v-else>
             <button @click="editMode(employee)">Edit</button>
