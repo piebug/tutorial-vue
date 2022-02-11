@@ -6,6 +6,8 @@ module.exports = {
   theme: {
     fontFamily: {
       serif: ['Domine', 'serif'],
+      sans: ['Work Sans', 'sans-serif'],
+      display: ['Potta One', 'cursive'],
     },
     extend: {},
   },

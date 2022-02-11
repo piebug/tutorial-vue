@@ -94,10 +94,10 @@
     }
 
     button {
-      @apply py-2 mt-4 rounded-full bg-violet-500 text-white text-2xl shadow-sm
+      @apply py-2 mt-4 rounded-full bg-violet-500 shadow-sm
+        text-white text-2xl font-display
         hover:shadow-md focus:ring focus:ring-violet-200 focus:ring-opacity-50
         active:bg-violet-600 active:shadow-sm;
-      font-family: 'Potta One', cursive;
 
       &:disabled {
         @apply bg-violet-400 shadow-none hover:shadow-none;
@@ -108,14 +108,12 @@
       @apply px-4 block w-full rounded-full border-violet-100 shadow-sm
         focus:border-violet-300 focus:ring focus:ring-violet-200 focus:ring-opacity-50 
         focus:bg-violet-50 focus:text-purple-600
-        text-purple-900 text-2xl tracking-wider;
+        text-purple-900 text-2xl tracking-wider font-sans;
       background-color: #FCF6EE;
-      font-family: 'Work Sans', sans-serif;
     }
 
     .label {
-      @apply px-4 text-violet-500 text-lg;
-      font-family: 'Potta One', cursive;
+      @apply px-4 text-lg font-display;
       color: #2fa781;
     }
   }
