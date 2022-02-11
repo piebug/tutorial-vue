@@ -1,5 +1,5 @@
 import { createApp } from 'vue'
-import { createRouter, createWebHashHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 
 import Employees from './pages/Employees.vue'
 import Home from './pages/Home.vue'
@@ -12,7 +12,7 @@ const routes = [
 
 const router = createRouter({
   // createWebHistory is an alternate option
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes, // short for `routes: routes`
 })
 
