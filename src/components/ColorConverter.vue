@@ -4,7 +4,7 @@
 
     <form>
       <label class="block">
-        <span>HEX</span>
+        <span class="label">HEX</span>
         <hex-input
           v-model="color.hex"
           @use:hex="getRgb" 
@@ -13,7 +13,7 @@
       </label>
 
       <label class="block">
-        <span>RGB</span>
+        <span class="label">RGB</span>
         <rgb-input
           v-model="color.rgb"
           @use:rgb="getHex" 
@@ -85,24 +85,38 @@
 <style scoped lang="scss">
   #color-converter {
     .color-block {
-      @apply w-4/5 mx-auto aspect-square rounded-full shadow-md 
-        outline outline-1 outline-gray-200 border-2 border-white;
+      @apply w-3/5 mx-auto aspect-square rounded-full shadow-md;
       background-color: #FCF6EE;
-      border-color: #FCF6EE;
     }
 
     form {
-      @apply grid grid-cols-1 gap-4;
+      @apply mt-4 grid grid-cols-1 gap-4;
     }
 
     button {
-      @apply py-2 rounded-full border-2 border-violet-500;
+      @apply py-2 mt-4 rounded-full bg-violet-500 text-white text-2xl shadow-sm
+        hover:shadow-md focus:ring focus:ring-violet-200 focus:ring-opacity-50
+        active:bg-violet-600 active:shadow-sm;
+      font-family: 'Potta One', cursive;
+
+      &:disabled {
+        @apply bg-violet-400 shadow-none hover:shadow-none;
+      }
     }
 
     input {
-      @apply mt-1 block w-full rounded-full border-gray-200 shadow-sm 
-        focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50;
+      @apply px-4 block w-full rounded-full border-violet-100 shadow-sm
+        focus:border-violet-300 focus:ring focus:ring-violet-200 focus:ring-opacity-50 
+        focus:bg-violet-50 focus:text-purple-600
+        text-purple-900 text-2xl tracking-wider;
       background-color: #FCF6EE;
+      font-family: 'Work Sans', sans-serif;
+    }
+
+    .label {
+      @apply px-4 text-violet-500 text-lg;
+      font-family: 'Potta One', cursive;
+      color: #2fa781;
     }
   }
 </style>
