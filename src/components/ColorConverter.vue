@@ -2,7 +2,7 @@
   <section id="color-converter">
     <div class="color-block" :style="colorStyle"></div>
 
-    <form @submit.prevent="$emit('pin:color', color)">
+    <form @submit.prevent="pinColor">
       <label class="block">
         <span class="label">HEX</span>
         <hex-input
@@ -21,7 +21,7 @@
         />
       </label>
 
-      <button>Pin</button>
+      <button type="submit" :disabled="!color.hex || !color.rgb">Pin</button>
     </form>
   </section>
 </template>
@@ -77,6 +77,13 @@
         } catch (error) {
           console.error(error)
         }
+      },
+      pinColor() {
+        this.$emit('pin:color', this.color)
+
+        this.color.hex = ''
+        this.color.rgb = ''
+        this.colorStyle.backgroundColor = ''
       },
     },
   }

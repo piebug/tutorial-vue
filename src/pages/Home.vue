@@ -14,7 +14,10 @@
         <h1>color converter</h1>
       </header>
 
-      <color-converter />
+      <color-converter @pin:color="pinColor" />
+      <color-gallery :colors="colors" />
+
+      <router-link to="/employees">Go to About</router-link>
 
     </main>
   
@@ -24,11 +27,25 @@
 
 <script>
   import ColorConverter from '../components/ColorConverter.vue'
+  import ColorGallery from '../components/ColorGallery.vue'
 
   export default {
     name: 'home',
     components: {
       ColorConverter,
+      ColorGallery,
+    },
+    data() {
+      return {
+        colors: [],
+      }
+    },
+    methods: {
+      pinColor(color) {
+        if (!this.colors.find(c => c.hex === color.hex || c.rgb === color.rgb)) {
+          this.colors.push({...color})
+        }
+      }
     },
   }
 </script>
