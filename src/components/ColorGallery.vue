@@ -16,11 +16,11 @@
 
           <PopoverPanel class="popover absolute z-10">
             <div class="color-value">
-              <p>#{{ color.hex }}</p>
+              <p>#{{ color.hex.toUpperCase() }}</p>
 
               <button 
                 class="copy" 
-                @click="copy(color.hex)"
+                @click="copy(color.hex.toUpperCase())"
               >
                 Copy
               </button>
@@ -73,19 +73,20 @@
     }
 
     li {
-      @apply block w-1/4 p-2 shrink-0 hover:p-1;
+      @apply block w-1/3 lg:w-1/4 p-2 shrink-0 hover:p-1;
     }
 
     .color-block {
       @apply block w-full aspect-square rounded-full shadow-sm bg-cream hover:shadow-md;
 
       &.open {
-        @apply ring ring-cream;
+        @apply ring ring-cream ring-opacity-80;
       }
     }
 
     .popover {
-      @apply p-3 bg-cream shadow-lg rounded-xl grid grid-cols-1 font-sans;
+      @apply p-3 bg-cream shadow-lg rounded-xl grid grid-cols-1 font-sans
+        -mt-9 -ml-4;
 
       button.delete {
         @apply py-2 px-3 mt-1 rounded-full bg-rose-500 shadow-sm hover:shadow-md
@@ -96,8 +97,8 @@
     }
 
     .color-value {
-      @apply flex flex-row justify-between mb-1
-        border border-violet-200 rounded-full;
+      @apply flex flex-row justify-between mb-2 text-purple-900
+        border-2 border-violet-100 rounded-full;
 
       p,
       button.copy {
@@ -105,7 +106,9 @@
       }
 
       button.copy {
-        @apply border-l border-violet-200 rounded-r-full hover:bg-violet-100;
+        @apply border-l border-violet-100 rounded-r-full
+          hover:bg-violet-50 active:bg-violet-100 
+          focus:ring focus:ring-violet-300 focus:ring-opacity-50;
       }
     }
   }
