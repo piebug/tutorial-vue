@@ -7,8 +7,7 @@
         v-for="color in colors"
         :key="color.hex"
       >
-        <span class="color-block"></span>
-        {{ color.hex }}
+        <span class="color-block" :style="{ backgroundColor: `#${color.hex}` }"></span>
       </li>
     </ul>
   </section>
@@ -33,7 +32,7 @@
 <style scoped lang="scss">
   #color-gallery {
     .color-block {
-      @apply aspect-square rounded-full shadow-sm bg-cream;
+      @apply block w-1/5 aspect-square rounded-full shadow-sm bg-cream;
     }
   }
 </style>
