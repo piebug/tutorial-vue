@@ -2,7 +2,7 @@
   <section id="color-converter">
     <div class="color-block" :style="colorStyle"></div>
 
-    <form>
+    <form @submit.prevent="$emit('pin:color', color)">
       <label class="block">
         <span class="label">HEX</span>
         <hex-input
@@ -84,18 +84,22 @@
 
 <style scoped lang="scss">
   #color-converter {
+    @apply md:flex md:flex-row ;
+
     .color-block {
-      @apply w-3/5 mx-auto aspect-square rounded-full shadow-md bg-cream;
+      @apply w-3/5 m-auto aspect-square rounded-full shadow-sm bg-cream
+        md:mx-0 md:w-full md:basis-2/5;
     }
 
     form {
-      @apply mt-4 grid grid-cols-1 gap-4;
+      @apply mt-4 grid grid-cols-1 gap-4 
+        md:w-full md:pl-8;
     }
 
     button {
-      @apply py-2 mt-4 rounded-full bg-violet-500 shadow-sm
-        text-white text-2xl font-display
-        hover:shadow-md focus:ring focus:ring-violet-200 focus:ring-opacity-50
+      @apply py-2 mt-4 rounded-full bg-violet-500 shadow-sm hover:shadow-md
+        text-white text-xl font-display
+        focus:ring focus:ring-violet-300 focus:ring-opacity-50
         active:bg-violet-600 active:shadow-sm;
 
       &:disabled {
@@ -105,9 +109,14 @@
 
     input {
       @apply px-4 block w-full rounded-full border-violet-100 shadow-sm bg-cream
-        focus:border-violet-300 focus:ring focus:ring-violet-200 focus:ring-opacity-50 
+        focus:border-violet-300 focus:ring focus:ring-violet-300 focus:ring-opacity-50 
         focus:bg-violet-50 focus:text-purple-600
         text-purple-900 text-2xl tracking-wider font-sans;
+
+      &.has-error {
+        @apply text-rose-500 bg-rose-50 
+          focus:border-rose-300 focus:ring focus:ring-rose-300;
+      }
     }
 
     .label {
