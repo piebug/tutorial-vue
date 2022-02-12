@@ -11,8 +11,7 @@ const routes = [
 ]
 
 const router = createRouter({
-  // createWebHistory is an alternate option
-  history: createWebHistory(),
+  history: createWebHistory('/tutorial-vue'),
   routes, // short for `routes: routes`
 })
 
