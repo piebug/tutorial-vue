@@ -32,7 +32,7 @@
         this.$emit('update:modelValue', rgbInput)
 
         // Check that the rgb values are complete and valid for conversion
-        if (!this.isInvalid(rgbInput) && rgb.length === 3) {
+        if (!this.isInvalid(rgbInput) && rgb.length === 3 && rgb[2] ) {
           this.$emit('use:rgb', rgbInput)
         } else {
           this.$emit('reset')
@@ -46,6 +46,10 @@
         } else {
           // Check that each value is a number between 0 and 255
           rgbArray.forEach((val) => {
+            if (!val) {
+              return
+            }
+
             const num = +val
             if (!num || num < 0 || num > 255) {
               this.error = true
