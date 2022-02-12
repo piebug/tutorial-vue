@@ -85,8 +85,7 @@
 <style scoped lang="scss">
   #color-converter {
     .color-block {
-      @apply w-3/5 mx-auto aspect-square rounded-full shadow-md;
-      background-color: #FCF6EE;
+      @apply w-3/5 mx-auto aspect-square rounded-full shadow-md bg-cream;
     }
 
     form {
@@ -105,16 +104,14 @@
     }
 
     input {
-      @apply px-4 block w-full rounded-full border-violet-100 shadow-sm
+      @apply px-4 block w-full rounded-full border-violet-100 shadow-sm bg-cream
         focus:border-violet-300 focus:ring focus:ring-violet-200 focus:ring-opacity-50 
         focus:bg-violet-50 focus:text-purple-600
         text-purple-900 text-2xl tracking-wider font-sans;
-      background-color: #FCF6EE;
     }
 
     .label {
-      @apply px-4 text-lg font-display;
-      color: #2fa781;
+      @apply px-4 text-lg font-display text-emerald-500;
     }
   }
 </style>

@@ -9,7 +9,11 @@ module.exports = {
       sans: ['Work Sans', 'sans-serif'],
       display: ['Potta One', 'cursive'],
     },
-    extend: {},
+    extend: {
+      colors: {
+        'cream': '#FCF6EE',
+      },
+    },
   },
   plugins: [
     require('@tailwindcss/forms'),

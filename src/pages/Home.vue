@@ -49,10 +49,10 @@
   }
 
   header h1 {
-    @apply text-5xl;
+    @apply text-5xl text-emerald-500;
     font-family: 'Potta One', cursive;
     /* color: #8C5F95; */
-    color: #2fa781;
+    /* color: #2fa781; */
     margin: 0;
     padding: 0;
   }
