@@ -46,12 +46,12 @@
         } else {
           // Check that each value is a number between 0 and 255
           rgbArray.forEach((val) => {
-            if (!val) {
+            if (val === '') {
               return
             }
 
             const num = +val
-            if (!num || num < 0 || num > 255) {
+            if ((!num && num !== 0) || num < 0 || num > 255) {
               this.error = true
               return
             }
