@@ -18,7 +18,7 @@
             <p>{{ color.hex }}</p>
             <p>{{ color.rgb }}</p>
 
-            <button class="delete" @click="$emit('delete:color', color)">Delete</button>
+            <button class="delete" @click="$emit('remove:color', color)">Remove</button>
           </PopoverPanel>
         </Popover>
       </li>
