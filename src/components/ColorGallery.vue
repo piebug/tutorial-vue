@@ -2,7 +2,7 @@
   <section id="color-gallery" v-if="colors.length > 0">
     <h2>pinned colors</h2>
 
-    <ul>
+    <ul class="flex flex-row flex-wrap justify-center">
       <li
         v-for="color in colors"
         :key="color.hex"
@@ -31,8 +31,17 @@
 
 <style scoped lang="scss">
   #color-gallery {
+    h2 {
+      @apply text-3xl text-emerald-500 text-center font-display mb-4;
+    }
+
+    li {
+      @apply block w-1/4 p-2 shrink-0;
+    }
+
     .color-block {
-      @apply block w-1/5 aspect-square rounded-full shadow-sm bg-cream;
+      @apply block w-full aspect-square rounded-full shadow-sm bg-cream
+        hover:shadow-md;
     }
   }
 </style>
