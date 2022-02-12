@@ -1,6 +1,7 @@
 <template>
   <input 
     type="text"
+    :class="{ 'has-error': error && modelValue }"
     :value="modelValue"
     @input="checkInput"
   />
@@ -12,8 +13,14 @@
     props: {
       modelValue: String,
     },
+    data() {
+      return {
+        error: false,
+      }
+    },
     methods: {
       checkInput(e) {
+        this.error = false
         let hexInput = e.target.value
 
         // Ignore initial "#" in hex value
@@ -30,7 +37,8 @@
         }
       },
       isInvalid(hex) {
-        return !/^[0-9a-f]{1,6}$/i.test(hex)
+        this.error = !/^[0-9a-f]{1,6}$/i.test(hex)
+        return this.error
       },
     },
   }

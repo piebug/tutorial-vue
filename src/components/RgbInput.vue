@@ -1,6 +1,7 @@
 <template>
   <input 
     type="text"
+    :class="{ 'has-error': error && modelValue }"
     :value="modelValue"
     @input="checkInput"
   />
@@ -12,8 +13,14 @@
     props: {
       modelValue: String,
     },
+    data() {
+      return {
+        error: false,
+      }
+    },
     methods: {
       checkInput(e) {
+        this.error = false
         let rgbInput = e.target.value
         const rgb = rgbInput.split(',').map(val => val.trim())
 
@@ -35,20 +42,18 @@
         // Check that there are no more than 3 values
         const rgbArray = rgb.split(',')
         if (rgbArray.length > 3) {
-          return true
+          this.error = true
+        } else {
+          // Check that each value is a number between 0 and 255
+          rgbArray.forEach((val) => {
+            const num = +val
+            if (!num || num < 0 || num > 255) {
+              this.error = true
+              return
+            }
+          })
         }
-
-        // Check that each value is a number between 0 and 255
-        let isInvalid = false
-        rgbArray.forEach((val) => {
-          const num = +val
-          if (!num || num < 0 || num > 255) {
-            isInvalid = true
-            return
-          }
-        })
-
-        return isInvalid
+        return this.error
       },
     },
   }
