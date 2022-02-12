@@ -7,15 +7,33 @@
         v-for="color in colors"
         :key="color.hex"
       >
-        <span class="color-block" :style="{ backgroundColor: `#${color.hex}` }"></span>
+        <Popover v-slot="{ open }">
+          <PopoverButton 
+            class="color-block" 
+            :class="{ 'open': open }"  
+            :style="{ backgroundColor: `#${color.hex}` }"
+          ></PopoverButton>
+
+          <PopoverPanel class="popover absolute z-10">
+            <p>{{ color.hex }}</p>
+            <p>{{ color.rgb }}</p>
+          </PopoverPanel>
+        </Popover>
       </li>
     </ul>
   </section>
 </template>
 
 <script>
+  import { Popover, PopoverButton, PopoverPanel } from '@headlessui/vue'
+
   export default {
     name: 'color-gallery',
+    components: { 
+      Popover, 
+      PopoverButton, 
+      PopoverPanel 
+    },
     props: {
       colors: Array,
     },
@@ -36,12 +54,16 @@
     }
 
     li {
-      @apply block w-1/4 p-2 shrink-0;
+      @apply block w-1/4 p-2 shrink-0 hover:p-1;
     }
 
     .color-block {
       @apply block w-full aspect-square rounded-full shadow-sm bg-cream
         hover:shadow-md;
+
+      &.open {
+        @apply ring ring-cream;
+      }
     }
   }
 </style>
