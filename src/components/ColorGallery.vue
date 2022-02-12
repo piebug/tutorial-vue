@@ -15,8 +15,27 @@
           ></PopoverButton>
 
           <PopoverPanel class="popover absolute z-10">
-            <p>{{ color.hex }}</p>
-            <p>{{ color.rgb }}</p>
+            <div class="color-value">
+              <p>#{{ color.hex }}</p>
+
+              <button 
+                class="copy" 
+                @click="copy(color.hex)"
+              >
+                Copy
+              </button>
+            </div>
+
+            <div class="color-value">
+              <p>{{ color.rgb.split(',').join(', ') }}</p>
+
+              <button 
+                class="copy" 
+                @click="copy(color.rgb)"
+              >
+                Copy
+              </button>
+            </div>
 
             <button class="delete" @click="$emit('remove:color', color)">Remove</button>
           </PopoverPanel>
@@ -39,14 +58,9 @@
     props: {
       colors: Array,
     },
-    data() {
-      return {
-        editing: null,
-      }
-    },
     methods: {
-      copy() {
-        navigator.clipboard.writeText("Howdy, partner!");
+      copy(text) {
+        navigator.clipboard.writeText(text);
       }
     }
   }
@@ -74,10 +88,24 @@
       @apply p-3 bg-cream shadow-lg rounded-xl grid grid-cols-1 font-sans;
 
       button.delete {
-        @apply py-2 px-3 mt-1 rounded-2xl bg-rose-500 shadow-sm hover:shadow-md
+        @apply py-2 px-3 mt-1 rounded-full bg-rose-500 shadow-sm hover:shadow-md
           text-white font-display
           focus:ring focus:ring-rose-300 focus:ring-opacity-50
           active:bg-rose-600 active:shadow-sm;
+      }
+    }
+
+    .color-value {
+      @apply flex flex-row justify-between mb-1
+        border border-violet-200 rounded-full;
+
+      p,
+      button.copy {
+        @apply py-2 px-3;
+      }
+
+      button.copy {
+        @apply border-l border-violet-200 rounded-r-full hover:bg-violet-100;
       }
     }
   }
