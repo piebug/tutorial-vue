@@ -26,8 +26,8 @@
 
         // Clean up rgb input value and auto-add commas when relevant
         rgbInput = rgb.join(',')
-        if (rgb.length < 3 && rgb[rgb.length - 1].length === 3) {
-          rgbInput = `${rgbInput},`
+        if (rgb.length < 3 && rgb[rgb.length - 1].length > 3) {
+          rgbInput = `${rgbInput.slice(0, -1)},${rgbInput.slice(-1)}`
         }
         this.$emit('update:modelValue', rgbInput)
 
