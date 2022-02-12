@@ -15,7 +15,7 @@
       </header>
 
       <color-converter @pin:color="pinColor" />
-      <color-gallery :colors="colors" />
+      <color-gallery :colors="colors" @delete:color="deleteColor"  />
 
       <router-link to="/employees">Go to About</router-link>
 
@@ -45,7 +45,10 @@
         if (!this.colors.find(c => c.hex === color.hex || c.rgb === color.rgb)) {
           this.colors.push({...color})
         }
-      }
+      },
+      deleteColor(color) {
+        this.colors = this.colors.filter(c => !(c.hex === color.hex || c.rgb === color.rgb))
+      },
     },
   }
 </script>

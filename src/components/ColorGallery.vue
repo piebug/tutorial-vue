@@ -17,6 +17,8 @@
           <PopoverPanel class="popover absolute z-10">
             <p>{{ color.hex }}</p>
             <p>{{ color.rgb }}</p>
+
+            <button class="delete" @click="$emit('delete:color', color)">Delete</button>
           </PopoverPanel>
         </Popover>
       </li>
@@ -32,7 +34,7 @@
     components: { 
       Popover, 
       PopoverButton, 
-      PopoverPanel 
+      PopoverPanel,
     },
     props: {
       colors: Array,
@@ -43,6 +45,9 @@
       }
     },
     methods: {
+      copy() {
+        navigator.clipboard.writeText("Howdy, partner!");
+      }
     }
   }
 </script>
@@ -58,11 +63,21 @@
     }
 
     .color-block {
-      @apply block w-full aspect-square rounded-full shadow-sm bg-cream
-        hover:shadow-md;
+      @apply block w-full aspect-square rounded-full shadow-sm bg-cream hover:shadow-md;
 
       &.open {
         @apply ring ring-cream;
+      }
+    }
+
+    .popover {
+      @apply p-3 bg-cream shadow-lg rounded-xl grid grid-cols-1 font-sans;
+
+      button.delete {
+        @apply py-2 px-3 mt-1 rounded-2xl bg-rose-500 shadow-sm hover:shadow-md
+          text-white font-display
+          focus:ring focus:ring-rose-300 focus:ring-opacity-50
+          active:bg-rose-600 active:shadow-sm;
       }
     }
   }
