@@ -84,16 +84,12 @@
 
 <style scoped lang="scss">
   #color-converter {
-    @apply md:flex md:flex-row ;
-
     .color-block {
-      @apply w-3/5 m-auto aspect-square rounded-full shadow-sm bg-cream
-        md:mx-0 md:w-full md:basis-2/5;
+      @apply w-3/5 m-auto aspect-square rounded-full shadow-sm bg-cream;
     }
 
     form {
-      @apply mt-4 grid grid-cols-1 gap-4 
-        md:w-full md:pl-8;
+      @apply mt-4 grid grid-cols-1 gap-4;
     }
 
     button {

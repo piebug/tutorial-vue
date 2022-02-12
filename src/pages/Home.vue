@@ -40,7 +40,7 @@
   }
 
   main {
-    @apply container mx-auto pt-8 px-4 xl:w-1/2 font-serif;
+    @apply container mx-auto pt-8 px-4 lg:w-1/2 xl:w-1/3 font-serif;
   }
 
   header {
