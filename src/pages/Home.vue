@@ -1,28 +1,23 @@
 <template>
-  <div id="circle" class="repeat-bg"></div>
-  <div id="home" class="element">
-    <!-- <div id="circle"></div> -->
-    <!-- <div id="circle" class="repeat-bg"></div> -->
-
-    <!-- <header class="element"> -->
-      <!-- <header>
-        <h1>color converter</h1>
-      </header> -->
+  <div id="home" class="page">
+    <div id="circle" class="repeat-bg"></div>
 
     <main>
-      <header>
-        <h1>color converter</h1>
-      </header>
+      <h1>color converter</h1>
 
       <color-converter @pin:color="pinColor" />
       <color-gallery :colors="colors" @remove:color="removeColor"  />
-
-      <router-link to="/employees">Go to About</router-link>
-
     </main>
-  
+
+    <div id="footer"><div id="circle-b" class="repeat-bg"></div></div>
   </div>
-  <!-- <div id="circle" class="repeat-bg"></div> -->
+
+  <div id="home-footer">
+    <footer>
+      <a class="made-by" href="https://github.com/pies-n-loaf/tutorial-vue">made by sandy.</a>
+      <router-link to="/employees">employees ></router-link>
+    </footer>
+  </div>
 </template>
 
 <script>
@@ -53,32 +48,39 @@
   }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
   #home {
-    @apply m-0 p-0 h-screen;
+    @apply m-0 p-0 min-h-screen flex flex-col;
     background-color: #CFF2D4;
+
+    main {
+      @apply container mx-auto px-4 lg:w-1/2 xl:w-1/3 grow;
+
+      & > * {
+        @apply mb-8;
+      }
+
+      h1 {
+        @apply text-5xl text-emerald-500 text-center font-display mt-8;
+      }
+    }
   }
 
-  main {
-    @apply container mx-auto pt-8 px-4 lg:w-1/2 xl:w-1/3 font-serif;
-  }
+  #home-footer {
+    @apply bg-cream;
+    height: 101px;
 
-  header {
-    padding: 1rem;
-    padding-top: 0;
-  }
+    footer {
+      @apply container mx-auto pt-8 px-4 lg:w-1/2 xl:w-1/3 flex flex-row justify-between content-center;
 
-  header h1 {
-    @apply text-5xl text-emerald-500;
-    font-family: 'Potta One', cursive;
-    /* color: #8C5F95; */
-    /* color: #2fa781; */
-    margin: 0;
-    padding: 0;
-  }
+      & > a {
+        @apply py-2 px-3 rounded-full font-display text-violet-400 hover:bg-violet-50;
+      }
 
-  .small-container {
-    max-width: 680px;
+      .made-by {
+        @apply text-xl text-emerald-500 hover:bg-emerald-50;
+      }
+    }
   }
 
   .repeat-bg {
@@ -92,26 +94,27 @@
     width: 50px;
     shape-outside: circle(100%);
     shape-margin: 1rem;
-    clip-path: circle(50% at 50% -4px);
-    /* shape-outside: ellipse(50px 35px);
-    clip-path: ellipse(50px 35px at 50% 0); */
-    /* background: linear-gradient(to top right, #FDB171, #FD987D); */
-    /* background-color: #f36f63; */
-    /* background-color: #9FE5A9; */
+    clip-path: circle(50% at 50% -1px);
     background-color: #FCF6EE;
-  
-    /* float: left;
+  }
+
+  #circle-b {
+    float: left;
     height: 50px;
     width: 50px;
     shape-outside: circle(100%);
     shape-margin: 1rem;
-    clip-path: circle(100% at 50% 0);
-    background: linear-gradient(to top right, #FDB171, #FD987D); */
+    clip-path: circle(50% at 50% 100%);
+    background-color: #FCF6EE;
   }
-  .element {
+
+  .page {
     background: -moz-element(#circle) repeat-x;
-    /* background-image: -moz-element(#circle);
-    background-repeat: repeat-x; */
-    /* height: 50px; */
+  }
+
+  #footer {
+    background: -moz-element(#circle-b) repeat-x;
+    height: 50px;
+    margin-bottom: -1px;
   }
 </style>
