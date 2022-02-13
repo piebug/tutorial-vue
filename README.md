@@ -59,7 +59,7 @@ This issue would prevent anyone from navigating to the [Employees](https://pies-
 
 This was wholly unacceptable to me, so I used [Learn Vue's advice](https://learnvue.co/2020/09/how-to-deploy-your-vue-app-to-github-pages/#setting-up-your-project) to copy the index page to `404.html` in my deploy workflow. This means all true 404s show the home page instead of an error, but for a project this inconsequential, this is perfectly splendid.
 
-### More Learning
+### Extended Learning
 
 * [Mozilla's Vue Tutorial](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/Vue_getting_started) - make a task app
 * [Learn Vue's Tutorial](https://learnvue.co/2020/12/setting-up-your-first-vue3-project-vue-3-0-release/#getting-started) - search the Vue docs
