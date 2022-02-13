@@ -83,10 +83,10 @@
 
 <style scoped lang="scss">
   #employees {
-    @apply m-0 p-0 h-screen bg-stone-50;
+    @apply m-0 p-0 min-h-screen bg-stone-50;
 
     main {
-      @apply container mx-auto pt-8 px-4 lg:w-3/5 font-serif;
+      @apply container mx-auto py-8 px-4 lg:w-3/5 2xl:w-1/2 font-serif;
 
       & > * {
         @apply mb-8;
