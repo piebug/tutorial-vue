@@ -49,7 +49,7 @@ yarn build && yarn serve
 
 * `v-bind:employees` = `:employees`
 * `v-on:input` = `@input`
-* `v-slot`/`x`
+* `v-slot`/`x` ([slots documentation](https://v3.vuejs.org/guide/component-slots.html#slot-content))
 
 ### Vue Router Bummer
 
@@ -58,3 +58,10 @@ I found out that GitHub pages doesn't support Single Page Apps (SPAs), which is 
 This issue would prevent anyone from navigating to the [Employees](https://pies-n-loaf.github.io/tutorial-vue/employees) page with the URL alone - they would be **required** to click on the link within the app to get there. 
 
 This was wholly unacceptable to me, so I used [Learn Vue's advice](https://learnvue.co/2020/09/how-to-deploy-your-vue-app-to-github-pages/#setting-up-your-project) to copy the index page to `404.html` in my deploy workflow. This means all true 404s show the home page instead of an error, but for a project this inconsequential, this is perfectly splendid.
+
+### More Learning
+
+* [Mozilla's Vue Tutorial](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/Vue_getting_started) - make a task app
+* [Learn Vue's Tutorial](https://learnvue.co/2020/12/setting-up-your-first-vue3-project-vue-3-0-release/#getting-started) - search the Vue docs
+* [Matthias Hager's Tutorial](https://matthiashager.com/complete-vuejs-application-tutorial) - make a budgeting app ([with LocalStorage](https://matthiashager.com/complete-vuejs-application-tutorial/localstorage-vuejs)!)
+* [5 feature ideas](https://tutorialzine.com/2016/03/5-practical-examples-for-learning-vue-js)
