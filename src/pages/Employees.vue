@@ -86,7 +86,7 @@
     @apply m-0 p-0 h-screen bg-stone-50;
 
     main {
-      @apply container mx-auto pt-8 px-4 lg:w-1/3 font-serif;
+      @apply container mx-auto pt-8 px-4 lg:w-3/5 font-serif;
 
       & > * {
         @apply mb-8;
