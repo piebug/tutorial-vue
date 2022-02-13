@@ -1,5 +1,7 @@
 # tutorial-vue
 
+[![Deploy to GH Pages](https://github.com/pies-n-loaf/tutorial-vue/actions/workflows/main.yml/badge.svg)](https://github.com/pies-n-loaf/tutorial-vue/actions/workflows/main.yml)
+
 ## Project setup
 ```
 yarn install
