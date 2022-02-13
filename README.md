@@ -21,14 +21,6 @@ In addition to [Vue.js](https://vuejs.org/), I used this project to learn more a
 
 I thought about experimenting with [editable SVG](https://v2.vuejs.org/v2/cookbook/editable-svg-icons.html) using [heroicons](https://heroicons.com/), but my motivation petered out before I could get to it. Maybe someday! 🐱‍👓
 
-## Bummers
-
-I found out that GitHub pages doesn't support Single Page Apps (SPAs), which is a major bummer with using `vue-router`. Basically, it tries to look for a dedicated HTML file for each path, but all of my pages are served out from the `index.html`. Welp! 
-
-This issue would prevent anyone from navigating to the [Employees](https://pies-n-loaf.github.io/tutorial-vue/employees) page with the URL alone - they would be **required** to click on the link within the app to get there. 
-
-This was wholly unacceptable to me, so I used [Learn Vue's advice](https://learnvue.co/2020/09/how-to-deploy-your-vue-app-to-github-pages/#setting-up-your-project) to copy the index page to `404.html` in my deploy workflow. This means all true 404s show the home page instead of an error, but for a project this inconsequential, this is perfectly splendid.
-
 ## Setup
 
 I used `yarn` to manage dependencies and `vue create` to set up my project. I kept the generated source code as `example_src/` so I could reference it.
@@ -53,8 +45,16 @@ yarn build && yarn serve
 
 ## Notes
 
-Vue shortcuts: 
+### Shortcuts
 
 * `v-bind:employees` = `:employees`
-* `v-on:add` = `@add`
+* `v-on:input` = `@input`
 * `v-slot`/`x`
+
+### Vue Router Bummer
+
+I found out that GitHub pages doesn't support Single Page Apps (SPAs), which is a major bummer with using `vue-router`. Basically, it tries to look for a dedicated HTML file for each path, but all of my pages are served out from the `index.html`. Welp! 
+
+This issue would prevent anyone from navigating to the [Employees](https://pies-n-loaf.github.io/tutorial-vue/employees) page with the URL alone - they would be **required** to click on the link within the app to get there. 
+
+This was wholly unacceptable to me, so I used [Learn Vue's advice](https://learnvue.co/2020/09/how-to-deploy-your-vue-app-to-github-pages/#setting-up-your-project) to copy the index page to `404.html` in my deploy workflow. This means all true 404s show the home page instead of an error, but for a project this inconsequential, this is perfectly splendid.
