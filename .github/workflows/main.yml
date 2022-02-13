@@ -24,6 +24,9 @@ jobs:
         
       - name: Build the app with Vite
         run: yarn build-deploy
+
+      - name: Replace 404.html with index.html for routing
+        run: cp -rf dist/index.html dist/404.html
         
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@4.1.0
