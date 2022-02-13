@@ -6,7 +6,7 @@ This project includes my implementation of [Tania Rascia's Vue tutorial](https:/
 
 And, frankly, the "employee" subject matter wasn't cute enough for me to get excited about it.
 
-So I started the **Color Converter**! This part of the project takes in either a hex code or RGB, then uses [The Color API](https://www.thecolorapi.com/) to convert the value into either RGB or hex as appropriate. You can also pin or unpin colors to a list. 
+So I started the [**Color Converter**](https://pies-n-loaf.github.io/tutorial-vue/)! This part of the project takes in either a hex code or RGB, then uses [The Color API](https://www.thecolorapi.com/) to convert the value into either RGB or hex as appropriate. You can also pin or unpin colors to a list. 
 
 ## Tools
 
