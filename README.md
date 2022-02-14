@@ -57,7 +57,7 @@ I found out that GitHub pages doesn't support Single Page Apps (SPAs), which is 
 
 This issue would prevent anyone from navigating to the [Employees](https://pies-n-loaf.github.io/tutorial-vue/employees) page with the URL alone - they would be **required** to click on the link within the app to get there. 
 
-This was wholly unacceptable to me, so I used [Learn Vue's advice](https://learnvue.co/2020/09/how-to-deploy-your-vue-app-to-github-pages/#setting-up-your-project) to copy the index page to `404.html` in my deploy workflow. This means all true 404s show the home page instead of an error, but for a project this inconsequential, this is perfectly splendid.
+This was wholly unacceptable to me, so I used [Learn Vue's advice](https://learnvue.co/2020/09/how-to-deploy-your-vue-app-to-github-pages/#setting-up-your-project) to copy the index page to `404.html` in my deploy workflow. I then added a simple `NotFound` component for the router to display for any mistyped URL, and everything became perfectly splendid.
 
 ### Extended Learning
 
